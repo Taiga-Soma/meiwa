@@ -1,0 +1,43 @@
+.footer {
+  
+}
+
+.group {
+  text-align: center;
+  display: flow-root;
+
+}
+
+.list {
+  list-style: none;
+  display: inline-flex;
+}
+
+.grouplistA {
+  background: #ededed;
+  width: 100%;
+}
+
+.roll_fout {
+  color: #444;
+  text-decoration: none;
+  list-style: none;
+  font-size: small;
+}
+
+.grouplistB {
+  background: #e0e0e0;
+  width: 100%;
+}
+
+.footnav {
+  background-color: gray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.copy {
+  background: #699cc2;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,34 @@
+<mxfile host="65bd71144e" modified="2020-11-04T06:16:32.196Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" version="13.6.5" etag="UUJMDVMAdWs2sIdktDGB">
+    <diagram id="NoXH3uxOQOtDYIUiddKk" name="ページ1">
+        <mxGraphModel dx="968" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Users" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="310" width="340" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="name            (string型,  Not null) &#10;email           (string型,  Not null)&#10;tel             (string型,  Not null)&#10;password        (string型,  Not null)&#10;firstname       (string型,  Not null)&#10;lastname        (string型,  Not null)&#10;first_name_kana (string型,  Not null)&#10;last_name_kana  (string型,  Not null)&#10;birthday        (date型,   Not null)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=18;" parent="2" vertex="1">
+                    <mxGeometry y="26" width="340" height="214" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="List" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="313" width="160" height="116" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Item 1" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="6" vertex="1">
+                    <mxGeometry y="26" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Item 2" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="6" vertex="1">
+                    <mxGeometry y="56" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Item 3" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="6" vertex="1">
+                    <mxGeometry y="86" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="endArrow=none;html=1;rounded=0;entryX=-0.012;entryY=0.733;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="7" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="250" y="360" as="sourcePoint"/>
+                        <mxPoint x="540" y="363" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
