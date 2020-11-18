@@ -1,0 +1,9 @@
+.error-alert {
+  text-align: center;
+  color: red;
+  list-style: none;
+}
+
+.error-message {
+  list-style: none;
+}
