@@ -1,7 +1,8 @@
 class HomesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
-    # @homes = Home.all
+    @homes = Home.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -20,6 +21,6 @@ class HomesController < ApplicationController
   private
 
   def home_params
-    params.require(:home).permit(:home_name, :age_id, :name, :tel, :email, :prefecture_id, :class_id, :city_id, :address_id,  :price, :rate, :rent, :management, images: []).merge(user_id: current_user.id)
+    params.require(:home).permit(:home_name, :age, :name, :tel, :email, :prefecture_id, :zone_id, :city, :address, :price, :rate, :rent, :management, images: []).merge(user_id: current_user.id)
   end
 end

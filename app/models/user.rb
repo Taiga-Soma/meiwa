@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_many :items
+  has_many :homes
 
   with_options presence: true do
     validates :firstname, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
