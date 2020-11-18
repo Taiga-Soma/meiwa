@@ -10,7 +10,7 @@ class HomesController < ApplicationController
   end
 
   def create
-    @home = home.new(home_params)
+    @home = Home.new(home_params)
     if @home.save
       redirect_to root_path
     else
