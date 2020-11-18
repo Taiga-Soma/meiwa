@@ -37,11 +37,11 @@ ActiveRecord::Schema.define(version: 2020_11_17_125525) do
     t.string "home_name", null: false
     t.date "age", null: false
     t.string "name", null: false
-    t.string "tal", null: false
+    t.string "tel", null: false
     t.string "email", null: false
     t.integer "prefecture_id", null: false
     t.integer "zone_id", null: false
-    t.integer "city", null: false
+    t.integer "city"
     t.integer "address", null: false
     t.integer "price", null: false
     t.integer "rate", null: false
