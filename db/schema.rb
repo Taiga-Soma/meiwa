@@ -41,13 +41,14 @@ ActiveRecord::Schema.define(version: 2020_11_17_125525) do
     t.string "email", null: false
     t.integer "prefecture_id", null: false
     t.integer "zone_id", null: false
-    t.integer "city"
-    t.integer "address", null: false
+    t.string "city"
+    t.string "address", null: false
     t.integer "price", null: false
     t.integer "rate", null: false
     t.integer "rent", null: false
     t.integer "management", null: false
-    t.bigint "user_id", null: false
+    t.integer "resident_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_homes_on_user_id"
