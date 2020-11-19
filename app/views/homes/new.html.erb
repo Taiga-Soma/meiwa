@@ -129,30 +129,32 @@
             価格
             <span class="indispensable">必須</span>
           </div>
-          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"半角数字で記入。例) 3000万円" %>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"半角数字で記入。例) 3000" %>
+          <span class="price-spn">万円</span>
         </div>
         <div class="price-content">
           <div class="weight-bold-text">
             販売時金利 (%)
             <span class="indispensable">必須</span>
           </div>
-          <span>
-            <%= f.text_field :rate, class:"rate-input", id:"item-price", placeholder:"半角数字で記入。例) 2.15%" %>
-          </span>
+            <%= f.text_field :rate, class:"rate-input", id:"item-price", placeholder:"半角数字で記入。例) 2.15" %>
+            <span class="price-spn">％</span>
         </div>
         <div class="price-content">
           <div class="weight-bold-text">
             家賃
             <span class="indispensable">必須</span>
           </div>
-            <%= f.text_field :rent, class:"rent-input", id:"item-price", placeholder:"半角数字で記入。例) 75,000円" %>
+            <%= f.text_field :rent, class:"rent-input", id:"item-price", placeholder:"半角数字で記入。例) 75,000" %>
+            <span class="price-spn">円</span>
           </div>
           <div class="price-content">
             <div class="weight-bold-text">
               管理費
               <span class="indispensable">必須</span>
             </div>
-            <%= f.text_field :management, class:"price-input", id:"item-price", placeholder:"半角数字で記入。例) 15,000円" %>
+            <%= f.text_field :management, class:"price-input", id:"item-price", placeholder:"半角数字で記入。例) 15,000" %>
+            <span class="price-spn">円</span>
           </div>
         </div>
         <%# /販売価格 %>
@@ -163,25 +165,21 @@
             <div class="weight-bold-text">
               入居者
               <span class="indispensable">必須</span>
+              <%= f.collection_select(:resident_id, Resident.all, :id, :name, {}, {class:"select-box", id:"home-resident"}) %>
             </div>
-          <div class="field">
-            <% %w( 入居あり 入居なし).each.with_index do |ingredient,i| %>
-            <label>
-              <%= check_box_tag 'home[ingredients][]', ingredient,false,id:"home_ingredients_#{i}"%>
-              <%= ingredient %>
-            </label>
-            <% end %>
           </div>
         </div>
         <%#/入居者有無%>
-     </div>
-      <%# 下部ボタン %>
-      <div class="sell-btn-contents">
-        <%= f.submit "登録する" ,class:"sell-btn" %>
-        <%=link_to 'もどる', root_path, class:"back-btn" %>
-      </div>
+        <%# 下部ボタン %>
+        <div class="sell-btn-contents">
+          <%= f.submit "登録する" ,class:"sell-btn" %>
+          <%=link_to 'もどる', root_path, class:"back-btn" %>
+        </div>
       <%# /下部ボタン %>
+      </div>
     </div>
   </div>
   <% end %>
 </div>
+
+<%= render "shared/footer"%>

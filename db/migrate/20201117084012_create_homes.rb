@@ -8,13 +8,14 @@ class CreateHomes < ActiveRecord::Migration[6.0]
       t.string      :email,                     null: false
       t.integer     :prefecture_id,             null: false
       t.integer     :zone_id,                   null: false
-      t.integer     :city                      
-      t.integer     :address,                   null: false
+      t.string      :city
+      t.string      :address,                   null: false
       t.integer     :price,                     null: false
       t.integer     :rate,                      null: false
       t.integer     :rent,                      null: false
       t.integer     :management,                null: false
-      t.references  :user, foreign_key: true,   null: false
+      t.integer     :resident_id,               null: false
+      t.references  :user,                      foreign_key: true
       t.timestamps
     end
   end

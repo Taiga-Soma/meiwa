@@ -21,6 +21,6 @@ class HomesController < ApplicationController
   private
 
   def home_params
-    params.require(:home).permit(:home_name, :age, :name, :tel, :email, :prefecture_id, :zone_id, :city, :address, :price, :rate, :rent, :management, images: []).merge(user_id: current_user.id)
+    params.require(:home).permit(:home_name, :age, :name, :tel, :email, :prefecture_id, :zone_id, :city, :address, :price, :rate, :rent, :management, :resident_id, images: []).merge(user_id: current_user.id)
   end
 end

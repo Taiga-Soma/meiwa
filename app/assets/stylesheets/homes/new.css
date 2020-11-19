@@ -342,3 +342,7 @@
   margin-bottom: 10px;
   margin-left: 25%;
 }
+
+.price-spn {
+  text-align: right;
+}
