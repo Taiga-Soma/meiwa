@@ -1,4 +1,12 @@
 <%= render "shared/header" %>  
 <div class='main'>
+<% @homes.each do |home| %>
+  <%= home.content%>
+  <div class="homes">
+    <% home.images.each do |image| %>
+      <%= image_tag image, class:'images' %>
+    <% end %>
+  </div>
+<% end %>
 </div>
 <%= render "shared/footer"%>
