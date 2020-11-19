@@ -24,6 +24,9 @@
           <%= f.file_field :images, name: 'home[images][]', id:"home-image" %>
         </div>
         <div id= "home-box-img"> 
+        <% @home.images.each do |image| %>
+          <%= image_tag image, class: 'images' %>
+        <% end %>
         </div>
       </div>
       <%# /物件画像 %>
