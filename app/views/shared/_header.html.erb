@@ -1,17 +1,28 @@
 <header class='top-page-header'>
+  <div class="headercap">
+    <div class="headercapcont">
+      <p class="cap">東京のワンルーム30年の実績 資産運用・マンション経営は明和</p>
+      <ul class="subnavi">
+        <li><%= link_to "プライバシー・ポリシー","https://mmeiwa.jp/privacy/",class: "map", target: :_blank %></li>
+        <li><%= link_to "免責事項", "https://mmeiwa.jp/notice/",class: "map", target: :_blank %></li>
+        <li><%= link_to "サイトマップ", "https://mmeiwa.jp/sitemap/",class: "map", target: :_blank %></li>
+      </ul>
+    </div>
+  </div>
   <div class='search-bar-contents'>
     <%= link_to image_tag("meiwa.png", class:"meiwa-icon"),  "/"  %>
+    <div class='nav'>
+      <ul class='lists-right'>
+        <%if user_signed_in? %>
+          <li>こんにちは、<%= link_to "#{current_user.lastname}さん", root_path, class: "user-firstname" %></li> 
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%></li>
+          <li><%= link_to image_tag("new.png", class:"new-home"), new_home_path %></li>
+        <% else %>
+          <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+          <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-  <div class='nav'>
-    <ul class='lists-right'>
-      <%if user_signed_in? %>
-        <li>こんにちは、<%= link_to "#{current_user.lastname}さん", root_path, class: "user-firstname" %></li> 
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%></li>
-        <li><%= link_to image_tag("new.png", class:"new-home"), new_home_path %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-      <% end %>
-    </ul>
-  </div>
+  
 </header>

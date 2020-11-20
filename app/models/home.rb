@@ -1,6 +1,6 @@
 class Home < ApplicationRecord
   belongs_to :user
-  has_many_attached :images
+  has_many_attached :images,dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
@@ -8,11 +8,11 @@ class Home < ApplicationRecord
   belongs_to :resident
 
   with_options presence: true do
-    validates :home_name
+    validates :buildingname
     validates :age
     validates :name, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
     validates :tel, format: { with: /\A\d{10,11}\z/ }
-    validates :email, format: {with: /\A\S+@\S+\.\S+\z/}
+    validates :email
     validates :prefecture_id
     validates :zone_id
     validates :address

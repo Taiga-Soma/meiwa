@@ -1,7 +1,7 @@
 class CreateHomes < ActiveRecord::Migration[6.0]
   def change
     create_table :homes do |t|
-      t.string      :home_name,                 null: false
+      t.string      :buildingname,              null: false
       t.date        :age,                       null: false
       t.string      :name,                      null: false
       t.string      :tel,                       null: false

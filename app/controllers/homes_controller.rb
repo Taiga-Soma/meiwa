@@ -1,8 +1,8 @@
 class HomesController < ApplicationController
   before_action :authenticate_user!
-
+  before_action :set_home, only: [:show, :destroy, :edit, :update]
   def index
-    @homes = Home.includes(:user).order("created_at DESC")
+    @homes = Home.all
   end
 
   def new
@@ -16,11 +16,42 @@ class HomesController < ApplicationController
     else
       render :new
     end
+
+    def show
+  
+    end
+  
+    def destroy
+      @home.destroy 
+      redirect_to root_path
+    end
+  
+    def edit
+      
+      if user_signed_in? && current_user.id == @home.user_id
+      else redirect_to root_path
+      end
+    end
+  
+    def update
+      if @home.update(home_params)
+        redirect_to home_path
+      else
+        render :edit
+      end
+    end
   end
+
+
 
   private
 
   def home_params
-    params.require(:home).permit(:home_name, :age, :name, :tel, :email, :prefecture_id, :zone_id, :city, :address, :price, :rate, :rent, :management, :resident_id, images: []).merge(user_id: current_user.id)
+    params.require(:home).permit(:buildingname, :age, :name, :tel, :email, :prefecture_id, :zone_id, :city, :address, :price, :rate, :rent, :management, :resident_id, images: []).merge(user_id: current_user.id)
   end
+
+  def set_home
+    @home = Home.find(params[:id])
+  end
+
 end

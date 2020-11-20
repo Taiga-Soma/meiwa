@@ -1,25 +1,30 @@
 .top-page-header {
-  width: 100vw;
+  width: 50vw;
   padding: 2vh 15vw;
   display: flex;
   flex-direction: column;
 }
 
 .search-bar-contents{
-  
+  display: flex;
+  width: 128%;
 }
 
 .meiwa-icon{
-
+  height: 9vh;
+  width: 17vw;
+  margin: 15px 0 auto 0;
 }
 
 .nav{
-  
+  float: right;
+  margin: 0 0 0 auto;
 }
 
 .lists-right{
   display: flex;
   list-style: none;
+  margin: 20px 0;
 }
 
 .user-firstname{
@@ -40,4 +45,31 @@
   margin: 10px;
   text-decoration: none;
 }
-     
+
+.headercap {
+  background: url(images/header_bg.png) repeat-x;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 10px;
+}
+
+.headercapcont {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.cap {
+  float: left;
+}
+
+.subnavi {
+  float: right;
+  list-style-type: none;
+  display: flex;
+}
+
+.map {
+  text-decoration: none;
+  margin-left: 20px;
+}
+
