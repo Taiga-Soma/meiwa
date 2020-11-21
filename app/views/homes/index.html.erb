@@ -1,7 +1,7 @@
 <%= render "shared/header" %>  
 <% if user_signed_in?  %>
 <div class='main'>
-
+   
     <div class="home-box">
     <% @homes.each do |home| %>
     <% if current_user.id == home.user_id %> 

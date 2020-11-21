@@ -1,4 +1,18 @@
-.meiwa-icon {
-  width: 185px;
-  height: 49px;
+.second-page-header {
+  width: 100%;
+  min-width: 800px;
+  height: 130px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.second-header {
+  
+}
+
+.meiwa-icon {
+  
+}
+
