@@ -84,11 +84,11 @@
 .btn-btn {
   list-style: none;
   display: flex;
-
+  text-align: center;
 }
 
 .home-red-btn {
-  
+  margin-right: 10px;
 }
 
 .home-destroy {
