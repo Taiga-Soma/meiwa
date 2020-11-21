@@ -4,6 +4,7 @@
 
     <div class="home-box">
     <% @homes.each do |home| %>
+    <% if current_user.id == home.user_id %> 
       <h2 class="name1">
         <%= home.buildingname %>
       </h2>
@@ -74,6 +75,7 @@
         </li>
       </ul>
     </div>
+  <%end%>
   <%end%>
 <%end%>
 </div>

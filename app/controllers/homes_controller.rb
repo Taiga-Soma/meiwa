@@ -17,30 +17,27 @@ class HomesController < ApplicationController
       render :new
     end
   end
-  
+
   def destroy
-    if current_user.id == @home.user_id 
-    @home.destroy 
-    redirect_to root_path
+    if current_user.id == @home.user_id
+      @home.destroy
+      redirect_to root_path
     end
   end
-  
+
   def edit
-  
     if user_signed_in? && current_user.id == @home.user_id
     else redirect_to root_path
     end
   end
-  
+
   def update
     if @home.update(home_params)
-      redirect_to root_path      
+      redirect_to root_path
     else
-         render :edit
+      render :edit
     end
   end
-
-
 
   private
 
@@ -51,5 +48,4 @@ class HomesController < ApplicationController
   def set_home
     @home = Home.find(params[:id])
   end
-
 end

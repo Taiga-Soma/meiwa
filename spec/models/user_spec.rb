@@ -99,10 +99,10 @@ RSpec.describe User, type: :model do
       end
 
       it 'passwordと確認用passwordが一致しないと登録できない' do
-       @user.password = 'aaa111'
-       @user.password_confirmation = 'bbb222'
-       @user.valid?
-       expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+        @user.password = 'aaa111'
+        @user.password_confirmation = 'bbb222'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
     end
   end

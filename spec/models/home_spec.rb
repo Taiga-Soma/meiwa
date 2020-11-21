@@ -32,7 +32,6 @@ RSpec.describe Home, type: :model do
         expect(@home).to be_valid
       end
     end
-  
 
     context '新規物件投稿機能がうまくいかないとき' do
       it 'home_nameが空だと投稿できない' do
@@ -60,21 +59,21 @@ RSpec.describe Home, type: :model do
       end
 
       it 'telが11桁以上だと投稿されない' do
-        @home.tel = 00000000000000
+        @home.tel = 0o0000000000000
         @home.valid?
-        expect(@home.errors.full_messages).to include("Tel is invalid")
+        expect(@home.errors.full_messages).to include('Tel is invalid')
       end
 
       it 'telが全角だと投稿されない' do
         @home.tel = '０００００００００００'
         @home.valid?
-        expect(@home.errors.full_messages).to include("Tel is invalid")
+        expect(@home.errors.full_messages).to include('Tel is invalid')
       end
 
       it 'telが10桁以下だと投稿されない' do
-        @home.tel = 000000000
+        @home.tel = 0o00000000
         @home.valid?
-        expect(@home.errors.full_messages).to include("Tel is invalid")
+        expect(@home.errors.full_messages).to include('Tel is invalid')
       end
 
       it 'emailが空だと投稿できない' do
@@ -86,10 +85,9 @@ RSpec.describe Home, type: :model do
       it 'emailの@が抜けていたら投稿できない' do
         @home.email = 'aaacom'
         @home.valid?
-        expect(@home.errors.full_messages).to include("Email is invalid")
+        expect(@home.errors.full_messages).to include('Email is invalid')
       end
 
-    
       it 'prefecture_id空だと投稿できない' do
         @home.prefecture_id = ''
         @home.valid?
@@ -99,7 +97,7 @@ RSpec.describe Home, type: :model do
       it 'id=1を選択したときは購入できない' do
         @home.prefecture_id = 1
         @home.valid?
-        expect(@home.errors.full_messages).to include("Prefecture must be other than 1")
+        expect(@home.errors.full_messages).to include('Prefecture must be other than 1')
       end
 
       it 'zone_idが空だと投稿できない' do
@@ -111,7 +109,7 @@ RSpec.describe Home, type: :model do
       it 'id=1を選択したときは購入できない' do
         @home.zone_id = 1
         @home.valid?
-        expect(@home.errors.full_messages).to include("Zone must be other than 1")
+        expect(@home.errors.full_messages).to include('Zone must be other than 1')
       end
 
       it 'resident_idが空だと投稿できない' do
@@ -123,7 +121,7 @@ RSpec.describe Home, type: :model do
       it 'id=1を選択したときは購入できない' do
         @home.resident_id = 1
         @home.valid?
-        expect(@home.errors.full_messages).to include("Resident must be other than 1")
+        expect(@home.errors.full_messages).to include('Resident must be other than 1')
       end
 
       it 'addressが空だと投稿できない' do

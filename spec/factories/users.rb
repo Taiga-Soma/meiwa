@@ -6,7 +6,7 @@ FactoryBot.define do
     last_name_kana         { Gimei.last.katakana }
     email                  { Faker::Internet.free_email }
     password               { Faker::Internet.password(min_length: 6, mix_case: true) }
-    password_confirmation  {password}
+    password_confirmation  { password }
     birthday               { Faker::Date.in_date_period }
   end
 end
