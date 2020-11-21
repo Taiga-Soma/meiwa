@@ -1,0 +1,188 @@
+<div class="homes-sell-contents">
+  <header class="homes-sell-header">
+    <%= link_to image_tag('meiwa.png' , size: '185x50'), "/" %>
+  </header>
+  <div class="homes-sell-main">
+    <div class = "sub-main">
+      <h2 class="homes-sell-title">物件情報を入力</h2>
+      <%= form_with(model: @home, local: true) do |f| %>
+
+      <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+      <%= render 'shared/error_messages', model: f.object %>
+      <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+
+      <%# 出品画像 %>
+      <div class="img-upload">
+        <div class="bukken-bold-text">
+          物件画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :images, name: 'home[images][]', id:"home-image" %>
+        </div>
+        <div id= "home-box-img"> 
+        <% @home.images.each do |image| %>
+          <%= image_tag image, class: 'images' %>
+        <% end %>
+        </div>
+      </div>
+      <%# /物件画像 %>
+
+      <%# 物件名と築年数、最寄り徒歩時間 %>
+      <div class="new-homes">
+        <div class="weight-bold-text">
+          物件名
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :buildingname, class:"input-default", id:"home-name", placeholder:"商品名（ 必須 )", maxlength:"40" %>
+      </div>
+      <div class="home-group">
+        <div class='home-text-wrap'>
+          <label class="home-text">築年数</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class='home-birth-wrap'>
+          <%= raw sprintf(
+            f.date_select(
+            :age,
+            id:"birth-home",
+            use_month_numbers: true,
+           prompt:'--',
+           start_year: 1930,
+           end_year: (Time.now.year - 5),
+           date_separator: '%s'),
+           "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+        </div>
+      </div>
+      <%# /物件名と築年数、最寄り徒歩時間 %>
+
+      <%# 担当者連絡先 %>
+      <div class="homes-detail">
+        <div class = "name">
+          <div class="weight-bold-text">
+            担当者
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :name, class:"input-default", id:"name", placeholder:"例) 山田太郎" %>
+        </div>
+        <div class="tel">
+          <div class="weight-bold-text">
+            電話番号
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :tel, class:"input-default", id:"phone-number", placeholder:"例）09012345678",maxlength:"11"%>
+        </div>
+
+        <div class="email">
+          <div class="weight-bold-text">
+            メールアドレス
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+        </div>
+      </div>
+      <%# /担当者連絡先 %>
+
+      <%# 所在地 %>
+      <div class="home-address">
+        <div class="home-bold-text">
+          物件詳細
+        </div>
+        <div class="prefecture">
+          <div class="weight-bold-text">
+            物件の地域 <%#都道府県%>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"home-prefecture"}) %>
+        </div>
+        <div class="zone">
+          <div class="weight-bold-text">
+            物件区域 <%#東京23区%>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:zone_id, Zone.all, :id, :name, {}, {class:"select-box", id:"home-zone"}) %>
+        </div>
+        <div class= "city">
+          <div class="weight-bold-text">
+            市町村
+            <span class="indispensable-home">(任意)</span>
+          </div>
+          <%= f.text_field :city, class:"input-default", id:"city", placeholder:"例）横浜市緑区"%>
+        </div>
+        <div class="address">
+          <div class="weight-bold-text">
+            番地
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :address, class:"input-default", id:"addresses", placeholder:"例）青山1-1-1"%>
+        </div>
+      </div>
+      <%# /所在地 %>
+
+      <%# 販売価格 %>
+      <div class="sell-price">
+        <div class="home-bold-text">
+          販売価格
+        </div>
+        <div class="price-content">
+          <div class="weight-bold-text">
+            価格
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"半角数字で記入。例) 3000" %>
+          <span class="price-spn">万円</span>
+        </div>
+        <div class="price-content">
+          <div class="weight-bold-text">
+            販売時金利 (%)
+            <span class="indispensable">必須</span>
+          </div>
+            <%= f.text_field :rate, class:"rate-input", id:"item-price", placeholder:"半角数字で記入。例) 2.15" %>
+            <span class="price-spn">％</span>
+        </div>
+        <div class="price-content">
+          <div class="weight-bold-text">
+            家賃
+            <span class="indispensable">必須</span>
+          </div>
+            <%= f.text_field :rent, class:"rent-input", id:"item-price", placeholder:"半角数字で記入。例) 75,000" %>
+            <span class="price-spn">円</span>
+          </div>
+          <div class="price-content">
+            <div class="weight-bold-text">
+              管理費
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_field :management, class:"price-input", id:"item-price", placeholder:"半角数字で記入。例) 15,000" %>
+            <span class="price-spn">円</span>
+          </div>
+        </div>
+        <%# /販売価格 %>
+
+        <%#入居者有無%>
+        <div class = "home-resident">
+          <div class ="resident">
+            <div class="weight-bold-text">
+              入居者
+              <span class="indispensable">必須</span>
+              <%= f.collection_select(:resident_id, Resident.all, :id, :name, {}, {class:"select-box", id:"home-resident"}) %>
+            </div>
+          </div>
+        </div>
+        <%#/入居者有無%>
+        <%# 下部ボタン %>
+        <div class="sell-btn-contents">
+          <%= f.submit "登録する" ,class:"sell-btn" %>
+          <%=link_to 'もどる', root_path, class:"back-btn" %>
+        </div>
+      <%# /下部ボタン %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<%= render "shared/footer"%>
