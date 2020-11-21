@@ -1,0 +1,117 @@
+.AccountPage__form {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+}
+
+.edit_user {
+  width: 50%;
+}
+
+.FormForm {
+  background-color: white;
+  padding-bottom: 70px;
+}
+
+.form-mypage-header {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.form-mypage-header-text {
+  line-height: 100px;
+  border-bottom: 1px solid #f5f5f5;
+  font-weight: bold;
+}
+
+.FormField {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+
+.name_name {
+  display: flex;
+}
+
+.FormField__lastname1 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.FormField__lastname2 {
+ 
+}
+
+.FormField__firstname1 {
+  font-size: 14px;
+ font-weight: bold;
+}
+
+.FormField__firstname2 {
+ 
+}
+
+.FormField__birthday1 {
+  font-size: 14px;
+ font-weight: bold;
+}
+
+.FormField__birthday2 {
+  
+}
+
+.FormField__email1 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.FormField__email2 {
+  
+}
+
+.FormField__password1 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.FormField__password2 {
+  
+}
+
+.FormField__password2_1 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.FormField__password2_2 {
+  
+}
+
+.register-btn-mypage {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.omake {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.logout-btn {
+ 
+}
+
+.modoru-btn {
+ margin-left: 20px;
+}

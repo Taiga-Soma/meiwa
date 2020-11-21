@@ -1,0 +1,75 @@
+<%= render "shared/second_header" %> 
+<div class="AccountPage__form">
+  <%= form_for(current_user) do |f| %>
+    <div class = "FormForm">
+      <div class='form-mypage-header'>
+        <h1 class='form-mypage-header-text'>
+          マイページ
+        </h1>
+      </div>
+
+    <%= render 'shared/error_messages', model: f.object %>
+          
+      <div class="FormField">
+        <div class="FormField__lastname1">
+          <%= f.label "お名前" %>
+        </div>
+        <div class = "name_name">
+          <div class="FormField__lastname2">
+           <%=  current_user.lastname %>
+          </div>
+          <div class="FormField__firstname2">
+           <%=  current_user.firstname %>
+          </div>
+        </div>
+     </div>
+      <div class = "FormField">
+        <div class = "FormField__birthday1">
+          <%= f.label "生年月日" %>
+        </div>
+        <div class="FormField__birthday2">
+         <%= current_user.birthday %>
+       </div>
+      </div>
+      <div class="FormField">
+        <div class="FormField__email1">
+          <%= f.label :email %>
+        </div>
+        <div class="FormField__email2">
+          <%= f.email_field :email %>
+        </div>
+        <br>
+      </div>
+      <div class="FormField">
+        <div class="FormField__password1">
+          <%= f.label :password %>
+        </div>
+        <div class="FormField__password2">
+          <%= f.password_field :password, autofocus: true %>
+        </div>
+      </div>
+      <div class="FormField">
+        <div class="FormField__password2_1">
+          <%= f.label :password %>
+        </div>
+        <div class="FormField__password2_2">
+          <%= f.password_field :password, autofocus: true %>
+        </div>
+      </div>
+      <div class='register-btn-mypage'>
+        <%= f.submit "更新する" ,class:"register-red-btn" %>
+      </div>
+      <div class = "omake">
+        <div class = "logout-btn">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+        </div>
+        <br>
+        <div class = "modoru-btn"> 
+          <%= link_to "戻る", root_path%>
+        </div>
+      </div>
+    </div>
+</div>
+<% end %>
+
+<%= render "shared/footer"%>
