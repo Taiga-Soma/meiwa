@@ -40,6 +40,7 @@
 
 .name_name {
   display: flex;
+  margin-top: 10px;
 }
 
 .FormField__lastname1 {
@@ -48,7 +49,7 @@
 }
 
 .FormField__lastname2 {
- 
+  
 }
 
 .FormField__firstname1 {
@@ -57,43 +58,47 @@
 }
 
 .FormField__firstname2 {
- 
+  margin-left: 15px;
 }
 
 .FormField__birthday1 {
   font-size: 14px;
  font-weight: bold;
+ 
 }
 
 .FormField__birthday2 {
-  
+  margin-top: 10px;
 }
 
 .FormField__email1 {
   font-size: 14px;
   font-weight: bold;
+  
 }
 
 .FormField__email2 {
-  
+  margin-top: 10px;
 }
 
 .FormField__password1 {
   font-size: 14px;
   font-weight: bold;
+  
 }
 
 .FormField__password2 {
-  
+  margin-top: 10px;
 }
 
 .FormField__password2_1 {
   font-size: 14px;
   font-weight: bold;
+ 
 }
 
 .FormField__password2_2 {
-  
+  margin-top: 10px;
 }
 
 .register-btn-mypage {

@@ -42,3 +42,77 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+/* タブレット表示時 */
+@media (max-width: 1024px) {
+  .footer {
+    width: 100vw;
+    margin: 0 auto;
+  }
+
+  .group {
+    font-size: 24px;
+  }
+
+  .list {
+    
+  }
+
+  .grouplistA {
+   
+  }
+  .grouplistB {
+    font-size: 16px;
+  }
+  .roll_fout {
+
+  }
+  .footnav {
+
+  }
+  .copy{
+
+  }
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  .footer {
+    width: 100vw;
+  }
+  .group {
+    width: 100vw;
+  }
+
+  .list{
+    display: block;
+    margin: 0;
+  }
+
+  .grouplistA{
+    
+  }
+
+  .roll_fout {
+    margin: 10px 0;
+    display: flex;
+    font-size: 11px;
+    justify-content: center;
+  }
+
+  .grouplistB {
+    font-size: 5px;
+  }
+
+  .footnav{
+    
+  }
+
+  .sign-up {
+    margin: 5px;
+  }
+
+  .copy {
+    
+  }
+}

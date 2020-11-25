@@ -8,6 +8,15 @@
 }
 
 .home-box {
+  background-color: #f8f8f8;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.home-box2 {
   background-color: #FFF;
   width: 70vw;
   min-width: 1200px;
@@ -56,15 +65,24 @@
   margin: 40px 0px;
 }
 
+.overview {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 1200px;
+  padding: 10vh 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .detail-table {
-  margin-bottom: 60px;
-  width: 80%;
-  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 .detail-home {
   width: 20%;
-  background-color: #eee;
+  background-color: #f8f8f8;
   border: 1px solid #dedede;
   font-size: 14px;
   text-align: center;
@@ -75,10 +93,6 @@
   padding: 20px;
   border: 1px solid #dedede;
   font-size: 14px;
-}
-
-.more {
-  
 }
 
 .btn-btn {
@@ -94,4 +108,104 @@
 .home-destroy {
   margin-left: 10px;
 }
+
+/* タブレット表示時 */
+@media (max-width: 1024px) {
+  .main {
+    
+  }
+  .home-box {
+    
+  }
+  .home-box2 {
+    
+  }
+  .name1 {
+    font-size: 40px;
+  }
+  .home-img-content {
+    font-size: 16px;
+  }
+  .home-box-img {
+    width: 100%;
+    
+  }
+  .home-price {
+    font-size: 10px;
+  }
+
+  .home-postage {
+    font-size: 10px;
+  }
+
+  .home-explain-box {
+    font-size: 10px;
+  }
+
+  .overview {
+    width: 50vw;
+    min-width: 700px;
+  }
+
+  .detail-home {
+    width: 10%;
+    font-size: 10px;
+  }
+
+  .detail-value {
+    width: 50%;
+    font-size: 10px;
+  }
+ }
+
+ /* スマホ表示時 */
+@media (max-width: 599px) {
+  .main {
+    width: 100vw;
+    margin: 0 auto;
+  }
+  .home-box {
+    font-size: 14px;
+  }
+  .home-box2 {
+    width: 28%;
+    margin-bottom: 20px;
+  }
+  .name1 {
+    font-size: 10px;
+  }
+  .home-img-content {
+    font-size: 8px;
+  }
+  .home-box-img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .home-price {
+    font-size: 5px;
+  }
+
+  .home-postage {
+    font-size: 5px;
+  }
+
+  .home-explain-box {
+    font-size: 5px;
+  }
+
+  .overview {
+    width: 25vw;
+    min-width: 350px;
+  }
+
+  .detail-home {
+    width: 5%;
+    font-size: 5px;
+  }
+
+  .detail-value {
+    width: 25%;
+    font-size: 5px;
+  }
+ }
 

@@ -4,78 +4,86 @@
    
     <div class="home-box">
     <% @homes.each do |home| %>
-    <% if current_user.id == home.user_id %> 
-      <h2 class="name1">
-        <%= home.buildingname %>
-      </h2>
-      <div class='home-img-content'>
-        <%= image_tag home.images[0] ,class:"home-box-img" %>
+    <% if current_user.id == home.user_id %>
+      <div class = "home-box2"> 
+        <h2 class="name1">
+          <%= home.buildingname %>
+        </h2>
+        <div class='home-img-content'>
+          <%= image_tag home.images[0] ,class:"home-box-img" %>
+        </div>
       </div>
     </div>
     
-    <table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-home">物件価格</th>
-          <td class="detail-value"><%= home.price %>万円</td>
-        </tr>
-        <tr>
-          <th class="detail-home">金利</th>
-          <td class="detail-value"><%= home.rate %>%</td>
-        </tr>
-        <tr>
-          <th class="detail-home">家賃</th>
-          <td class="detail-value"><%= home.rent %>円</td>
-        </tr>
-        <tr>
-          <th class="detail-home">築年数</th>
-          <td class="detail-value"><%= home.age %></td>
-        </tr>
-        <tr>
-          <th class="detail-home">担当者</th>
-          <td class="detail-value"><%= home.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-home">電話番号</th>
-          <td class="detail-value"><%= home.tel %></td>
-        </tr>
-        <tr>
-          <th class="detail-home">メールアドレス</th>
-          <td class="detail-value"><%= home.email %></td>
-        </tr>
-        <tr>
-          <th class="detail-home">物件地域</th>
-          <td class="detail-value"><%= home.prefecture.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-home">物件区域</th>
-          <td class="detail-value"><%= home.zone.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-home">市町村</th>
-          <td class="detail-value"><%= home.address %></td>
-        </tr>
-        <tr>
-          <th class="detail-home">番地</th>
-          <td class="detail-value"><%= home.management %></td>
-        </tr>
-        <tr>
-          <th class="detail-home">入居者</th>
-          <td class="detail-value"><%= home.resident.name %></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="more" >
-      <ul class = "btn-btn">
-        <li>
-          <%= link_to '商品の編集', edit_home_path(home.id), method: :get, class: "home-red-btn" %>
-        </li>
-        <li>
-          <%= link_to '削除', home_path(home.id), method: :delete,  class:'home-destroy' %>
-        </li>
-      </ul>
-    </div>
-  <%end%>
+    <div class = "overview">
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-home">物件価格</th>
+            <td class="detail-value"><%= home.price %>万円</td>
+          </tr>
+          <tr>
+            <th class="detail-home">金利</th>
+            <td class="detail-value"><%= home.rate %>%</td>
+          </tr>
+          <tr>
+            <th class="detail-home">管理費</th>
+            <td class="detail-value"><%= home.rent %>円</td>
+          </tr>
+          <tr>
+            <th class="detail-home">家賃</th>
+            <td class="detail-value"><%= home.management %>円</td>
+          </tr>
+          <tr>
+            <th class="detail-home">築年数</th>
+            <td class="detail-value"><%= home.age %></td>
+          </tr>
+          <tr>
+            <th class="detail-home">担当者</th>
+            <td class="detail-value"><%= home.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-home">電話番号</th>
+            <td class="detail-value"><%= home.tel %></td>
+          </tr>
+          <tr>
+            <th class="detail-home">メールアドレス</th>
+            <td class="detail-value"><%= home.email %></td>
+          </tr>
+          <tr>
+            <th class="detail-home">物件地域</th>
+            <td class="detail-value"><%= home.prefecture.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-home">物件区域</th>
+            <td class="detail-value"><%= home.zone.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-home">市町村</th>
+            <td class="detail-value"><%= home.city %></td>
+          </tr>
+          <tr>
+            <th class="detail-home">番地</th>
+            <td class="detail-value"><%= home.address %></td>
+          </tr>
+          <tr>
+            <th class="detail-home">入居者</th>
+            <td class="detail-value"><%= home.resident.name %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="more" >
+        <ul class = "btn-btn">
+          <li>
+            <%= link_to '商品の編集', edit_home_path(home.id), method: :get, class: "home-red-btn" %>
+          </li>
+          <li>
+            <%= link_to '削除', home_path(home.id), method: :delete,  class:'home-destroy' %>
+          </li>
+        </ul>
+      </div>
+    </div> 
+   <%end%>
   <%end%>
 <%end%>
 </div>
