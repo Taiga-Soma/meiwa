@@ -73,3 +73,99 @@
   margin-left: 20px;
 }
 
+/* タブレット表示時 */
+@media (max-width: 1024px) {
+  .top-page-header {
+    width: 100vw;
+    margin: 0 auto;
+  }
+  .search-bar-contents {
+    font-size: 24px;
+  }
+  .meiwa-icon {
+    height: 10vh;
+    width: 33vw;
+  }
+
+  .lists-right {
+    margin-right: 80px;
+  }
+  .logout {
+    
+  }
+  .login {
+
+  }
+  .sign-up {
+
+  }
+  .headercap{
+
+  }
+  .headercapcont {
+
+  }
+  .map {
+
+  }
+
+ }
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  .top-page-header {
+    width: 100vw;
+  }
+  .search-bar-contents {
+    width: 70%;
+  }
+
+  .subnavi{
+    display: block;
+  }
+
+  .meiwa-icon {
+    height: 5vh;
+    width: 15vw;
+    margin: auto 0;
+  }
+
+  .lists-right {
+    margin: 10px 0;
+    display: flex;
+    font-size: 11px;
+  }
+
+  .logout {
+    font-size: 5px;
+  }
+
+  .login {
+    margin: 5px;
+  }
+
+  .sign-up {
+    margin: 5px;
+  }
+
+  .new-home {
+    height: 5vh;
+    width: 5vw;
+    margin: 15px 0 auto 0;
+  }
+  
+
+  .headercap{
+   padding-top: 4px;
+   padding-top: 4px;
+   font-size: 5px;
+  }
+
+  .headercapcont {
+    width: 500px;
+  }
+
+  .map {
+    margin-left: 10px;
+  }
+}
